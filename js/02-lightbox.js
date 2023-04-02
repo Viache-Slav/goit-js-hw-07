@@ -16,11 +16,10 @@ for (const img of galleryItems) {
     </a>
   </li>`;
   galleryEl.insertAdjacentHTML("beforeend", listEl);
-  const lightbox = new SimpleLightbox(".gallery li a", {
-      captionDelay: 250,
-      captionsData: "alt",
-      showCounter: true,
-      scrollbarWidth: 20
-    });
-  
 };
+const lightbox = new SimpleLightbox(".gallery li a", {
+  captionDelay: 250,
+  captionsData: "alt",
+  showCounter: true,
+  scrollbarWidth: 20
+});

@@ -16,15 +16,12 @@ for (const img of galleryItems) {
   </div>`;
   galleryEl.insertAdjacentHTML("beforeend", listEl);
 
-  galleryEl.addEventListener('click', event => {
-    event.preventDefault();
-    console.log(event.target);});
 }
-// galleryEl.addEventListener("click", (event) => {
-//     event.preventDefault();
-//     const instance = basicLightbox.create(`<img.src="${event.target.dataset.source}">`);
-//     instance.show();
-//   });
+galleryEl.addEventListener("click", (event) => {
+    event.preventDefault();
+    const instance = basicLightbox.create(`<img.src="${event.target.dataset.source}">`);
+    instance.show();
+  });
   
   
 
