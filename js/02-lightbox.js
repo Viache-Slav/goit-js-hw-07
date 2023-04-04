@@ -2,14 +2,12 @@ import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
 console.log(galleryItems);
-
-console.log(galleryItems);
 const galleryEl = document.querySelector(".gallery");
 for (const img of galleryItems) {
   const listEl = `<li>
-    <a class=“gallery__item” href=${img.original}>
+    <a class="gallery__item" href=${img.original}>
       <img
-        class=“gallery__image”
+        class="gallery__image"
         src=${img.preview}
         alt=${img.description}
       />
@@ -22,4 +20,4 @@ const lightbox = new SimpleLightbox(".gallery li a", {
   captionsData: "alt",
   showCounter: true,
   scrollbarWidth: 20
-});
+}); 
