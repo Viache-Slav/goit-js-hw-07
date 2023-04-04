@@ -1,23 +1,25 @@
+
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-console.log(galleryItems);
-const galleryEl = document.querySelector(".gallery");
-for (const img of galleryItems) {
-  const listEl = `<li>
-    <a class="gallery__item" href=${img.original}>
-      <img
-        class="gallery__image"
-        src=${img.preview}
-        alt=${img.description}
-      />
-    </a>
-  </li>`;
-  galleryEl.insertAdjacentHTML("beforeend", listEl);
-};
-const lightbox = new SimpleLightbox(".gallery li a", {
-  captionDelay: 250,
-  captionsData: "alt",
-  showCounter: true,
-  scrollbarWidth: 20
-}); 
+const galleryEl = document.querySelector('.gallery')
+const listEl = []
+
+galleryItems.forEach(element => {
+	const galleryLink = document.createElement('a')
+	galleryLink.className = 'gallery__item'
+	galleryLink.href = element.original
+	const galleryImage = document.createElement('img')
+	galleryImage.className = 'gallery__image'
+	galleryImage.src = element.preview
+	galleryImage.setAttribute('title', element.description)
+	galleryImage.alt = element.description
+
+	galleryLink.append(galleryImage)
+	listEl.push(galleryLink)
+})
+galleryEl.append(...listEl)
+
+new SimpleLightbox('.gallery a', {
+	captionDelay: 250
+}) 
