@@ -4,10 +4,10 @@ import { galleryItems } from './gallery-items.js';
 console.log(galleryItems);
 const galleryEl = document.querySelector(".gallery");
 for (const img of galleryItems) {
-  const listEl = `<div class=“gallery__item”>
-    <a class=“gallery__link” href=${img.original}>
+  const listEl = `<div class="gallery__item">
+    <a class="gallery__link" href=${img.original}>
       <img
-        class=“gallery__image”
+        class="gallery__image"
         src=${img.preview}
         data-source=${img.original}
         alt=${img.description}
@@ -19,7 +19,7 @@ for (const img of galleryItems) {
 }
 galleryEl.addEventListener("click", (event) => {
     event.preventDefault();
-    const instance = basicLightbox.create(`<img.src="${event.target.dataset.source}">`);
+    const instance = basicLightbox.create(`<img src="${event.target.dataset.source}">`);
     instance.show();
   });
   
