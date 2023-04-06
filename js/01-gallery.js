@@ -5,7 +5,7 @@ console.log(galleryItems);
 
 const galleryEl = document.querySelector(`.gallery`);
 for (const img of galleryItems) {
-  const listEl = `<div class="gallery__item">
+  const listEl = `<li class="gallery__item">
     <a class="gallery__link" href=${img.original}>
       <img
         class="gallery__image"
@@ -14,7 +14,7 @@ for (const img of galleryItems) {
         alt=${img.description}
       />
     </a>
-  </div>`;
+  </li>`;
   galleryEl.insertAdjacentHTML("beforeend", listEl);
 
 }
